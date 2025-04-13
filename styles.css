@@ -1,0 +1,60 @@
+/* styles.css */
+body {
+  font-family: "Varela Round", sans-serif;
+  background-color: rgb(28, 28, 28);
+  text-align: center;
+  user-select: none;
+
+  color: rgb(200, 195, 195);
+}
+
+/* Add styles here to customize the appearance of your app */
+/* Add styles here to customize the appearance of your app */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgb(40, 40, 40);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+p{
+  user-select: all;
+}
+button,
+label {
+  background-color: rgb(60, 60, 60);
+  color: rgb(220, 220, 220);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(80, 80, 80);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5rem 0;
+  background-color: rgb(50, 50, 50);
+  color: rgb(230, 230, 230);
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 4px;
+}
+
+a {
+  color: rgb(100, 180, 255);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

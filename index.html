@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="assets/1x/icon.ico" type="image/x-icon" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+             script-src 'self';
+             style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+             font-src 'self' https://fonts.gstatic.com"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>Tidyfier</title>
+  </head>
+  <body>
+    <div>
+      <h1>Tidyfier</h1>
+      <h1
+        style="color: rgb(41, 171, 226); margin-top: -2.8rem; margin-left: 5rem"
+      >
+        ⎯⎯
+      </h1>
+      <h5><i>Open-Sourced file organizer for Windows/Linux</i></h5>
+      <label for="inp" class="Button">Select folder</label>
+      <input type="button" id="inp" name="a" style="display: none" />
+      <button id="org">Organize!</button>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+      <h3>Selected Folder:</h3>
+      <h3 id="textFolder"></h3>
+      <h3>Depth of the folder:</h3>
+      <h3 id="textDepth"></h3>
+    </div>
+    <div style="margin: 20px 0;">
+      <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+        <button id="incr" class="depth-btn">▲</button>
+        <button id="decr" class="depth-btn">▼</button>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <h5>Depth selected to organize: </h5>
+        <h5 id="depthSelected">0</h5>
+      </div>
+    </div>
+
+    <p id="a"></p>
+    <div style="overflow-y: scroll; margin: auto; width: 90vh ;height: 30rem;border: 2px rgb(40,40,40) solid; border-radius: 2%;">
+    <button id="clip"style="margin-left: 80%;"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8v8a5 5 0 1 0 10 0V6.5a3.5 3.5 0 1 0-7 0V15a2 2 0 0 0 4 0V8"/>
+    </svg>
+    </button>
+    <textarea name="" style="display: none;" id="copy">asfd</textarea>
+    <p id="b" style=" white-space: pre-line; margin: 0;"></p>
+  </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
