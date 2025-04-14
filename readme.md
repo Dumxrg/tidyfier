@@ -23,4 +23,4 @@ npm start                                      # Start the application
 > This program has been tested on Ubuntu, but by the time you see this, the program doesn`t work properly on Linux
 <img style="width:10rem" src="https://i.ibb.co/4g06c3fH/splash.png">
 <img src="https://i.ibb.co/3YNKdkvL/capture.png">
-
+<img src="https://i.ibb.co/v4CpTx51/Capture.png">
