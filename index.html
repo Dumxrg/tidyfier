@@ -29,7 +29,12 @@
       <h5><i>Open-Sourced file organizer for Windows/Linux</i></h5>
       <label for="inp" class="Button">Select folder</label>
       <input type="button" id="inp" name="a" style="display: none" />
-      <button id="org">Organize!</button>
+      <button  id="org">Organize!</button>
+      <button id="set"  ><svg style="height: 0.9rem; transform: scale(1.5);" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13v-2a1 1 0 0 0-1-1h-.757l-.707-1.707.535-.536a1 1 0 0 0 0-1.414l-1.414-1.414a1 1 0 0 0-1.414 0l-.536.535L14 4.757V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v.757l-1.707.707-.536-.535a1 1 0 0 0-1.414 0L4.929 6.343a1 1 0 0 0 0 1.414l.536.536L4.757 10H4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h.757l.707 1.707-.535.536a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414 0l.536-.535 1.707.707V20a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-.757l1.707-.708.536.536a1 1 0 0 0 1.414 0l1.414-1.414a1 1 0 0 0 0-1.414l-.535-.536.707-1.707H20a1 1 0 0 0 1-1Z"/>
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+      </svg>
+      </button>
     </div>
     <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
       <h3>Selected Folder:</h3>
@@ -47,17 +52,62 @@
         <h5 id="depthSelected">0</h5>
       </div>
     </div>
-
     <p id="a"></p>
     <div style="overflow-y: scroll; margin: auto; width: 90vh ;height: 30rem;border: 2px rgb(40,40,40) solid; border-radius: 2%;">
-    <button id="clip"style="margin-left: 80%;"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <button class="clip" id="clip"style="opacity: 25%; margin-left: 80%;"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
       <path  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8v8a5 5 0 1 0 10 0V6.5a3.5 3.5 0 1 0-7 0V15a2 2 0 0 0 4 0V8"/>
     </svg>
     </button>
     <textarea name="" style="display: none;" id="copy">asfd</textarea>
     <p id="b" style=" white-space: pre-line; margin: 0;"></p>
   </div>
+<!-- Category Modal HTML (place this in your index.html, ideally near the bottom) -->
+<div id="category-modal" class="modal hidden">
+  <div class="modal-content">
+    <p>Enter new category name:</p>
+    <input type="text" id="category-input" />
+    <div class="modal-buttons">
+      <button id="category-confirm">Add</button>
+      <button id="category-cancel">Cancel</button>
+    </div>
+  </div>
+</div>
 
+
+  
+  <div class="settings" id="settings">
+    <h1>Settings</h1>
+  
+    <svg id="x" class="x w-6 h-6 text-gray-800 dark:text-white"
+      aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+      width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+    </svg>
+  <div style="display: inline-flex;">
+    <h3 style="text-align: justify;">Types of file: (You can edit)</h3>
+    <svg style="margin:18px" id="open1" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+    </svg>
+  </div>
+    <div class="type-editor" id="type-editor"></div>
+    <div style="display: inline-flex;">
+      <h3 style="text-align: justify;">Create a text file when organized:</h3>
+     <input type="checkbox" name="" checked id="">
+     
+  </div>
+  <div id="add-ext-popover" class="add-ext-popover hidden">
+    <div class="add-ext-content">
+      <p id="add-ext-label">Add extension to:</p>
+      <input type="text" id="add-ext-input" placeholder=".ext" />
+      <div class="add-ext-buttons">
+        <button id="add-ext-confirm">Add</button>
+        <button id="add-ext-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+  
     <script src="./renderer.js"></script>
-  </body>
+  </body> 
 </html>

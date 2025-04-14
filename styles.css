@@ -4,12 +4,44 @@ body {
   background-color: rgb(28, 28, 28);
   text-align: center;
   user-select: none;
+  color: rgb(220, 220, 220);
 
-  color: rgb(200, 195, 195);
 }
 
-/* Add styles here to customize the appearance of your app */
-/* Add styles here to customize the appearance of your app */
+.clip {
+  margin-bottom: -16rem;
+}
+
+.settings{
+  display: none;
+margin: 1rem;  
+}
+div.settings {
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  border-radius: 2rem;
+  overflow-y: scroll;
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  margin: 0;
+  background-color: rgb(14, 14, 14);
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+
+.x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
 
 .container {
   max-width: 800px;
@@ -17,6 +49,7 @@ body {
   padding: 2rem;
   background-color: rgb(40, 40, 40);
   border-radius: 8px;
+  
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 p{
@@ -24,6 +57,7 @@ p{
 }
 button,
 label {
+
   background-color: rgb(60, 60, 60);
   color: rgb(220, 220, 220);
   border: none;
@@ -35,7 +69,7 @@ label {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+button:hover, label:hover {
   background-color: rgb(80, 80, 80);
 }
 
@@ -45,7 +79,7 @@ textarea {
   padding: 10px;
   margin: 0.5rem 0;
   background-color: rgb(50, 50, 50);
-  color: rgb(230, 230, 230);
+  
   border: 1px solid rgb(70, 70, 70);
   border-radius: 4px;
 }
@@ -57,4 +91,242 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+.type-editor-label {
+  display: block;
+  width: 100%;
+  max-width: 90vh;
+  margin: 1rem auto 0.5rem auto;
+  padding: 0.5rem;
+ 
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.type-editor-ext-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 90vh;
+  margin: 0 auto 1rem auto;
+  justify-content: center;
+}
+
+.ext-btn {
+  padding: 0.4rem 0.6rem;
+  background-color: #444;
+
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ext-btn:hover {
+  background-color: crimson;
+}
+
+.add-ext-btn {
+  padding: 0.4rem 0.6rem;
+  background-color: forestgreen;
+
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.add-ext-btn:hover {
+  background-color: limegreen;
+}
+
+.add-ext-popover {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-ext-popover.hidden {
+  display: none;
+}
+
+.add-ext-content {
+  text-align: center;
+
+}
+
+#add-ext-input {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  width: 100%;
+  max-width: 10rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.add-ext-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.add-ext-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+#add-ext-confirm {
+  background-color: forestgreen;
+
+}
+
+#add-ext-cancel {
+  background-color: crimson;
+
+}
+.status-message {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #444;
+ 
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+.type-editor {
+  border-top: 0.5px solid #e0e0e0;
+  height: 0.5px;
+  transition: height 0.5s ease;
+  overflow: hidden;
+}
+
+svg{
+  transition: transform 0.2s ease-in-out;
+
+}
+.type-editor-label {
+  cursor: text;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.type-editor-label:hover {
+  background-color: #222222;
+}
+.add-category-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  z-index: 9999;
+
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  text-align: center;
+}
+.modal-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.modal-buttons button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+#category-confirm {
+  background-color: forestgreen;
+  
+}
+#category-cancel {
+  background-color: crimson;
+ 
+}
+
+.modal {
+  position: fixed;
+
+  padding: 1rem;
+  border: 1px solid #ccc;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Hide the modal by default */
+.hidden {
+  display: none;
+}
+
+/* Modal content inside the modal */
+.modal-content {
+  padding: 20px;
+}
+
+/* Styling for modal buttons */
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for the input inside the modal */
+#category-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  color: #e0e0e0;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(24, 24, 24); /* Solid white background */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  z-index: 9999; /* Ensure it is on top of other content */
+  color: #e0e0e0;
+  width: 300px; /* You can adjust the width */
 }

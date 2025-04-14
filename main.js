@@ -1,6 +1,8 @@
 const { app, BrowserWindow, ipcMain, dialog } = require("electron");
 const path = require("node:path");
-const fs = require("fs");
+const fs = require("fs"); // For sync functions like existsSync, mkdirSync, renameSync
+const fsp = require("fs").promises; // For async/await-friendly functions
+
 
 try {
   require("electron-reloader")(module);
@@ -18,10 +20,22 @@ function createWindow() {
       nodeIntegration: false,
       contextIsolation: true,
     },
+    
   });
+  mainWindow.webContents.openDevTools();
 
   mainWindow.loadFile("index.html");
 }
+ipcMain.handle('write-file', async (event, filePath, content) => {
+  try {
+    await fsp.writeFile(filePath, content, { encoding: 'utf8' });
+    return { success: true };
+  } catch (error) {
+    console.error('Failed to write file:', error);
+    return { success: false, error: error.message };
+  }
+});
+
 
 ipcMain.handle('create-folder', async (event, folderPath) => {
   try {

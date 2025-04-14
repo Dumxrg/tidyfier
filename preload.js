@@ -1,13 +1,14 @@
 const { contextBridge, ipcRenderer } = require('electron');
-
 contextBridge.exposeInMainWorld('electronAPI', {
   selectFolder: (defaultPath) => ipcRenderer.invoke('select-folder', defaultPath),
   createFolder: (folderPath) => ipcRenderer.invoke('create-folder', folderPath),
   moveFile: (oldPath, newPath) => ipcRenderer.invoke('move-file', oldPath, newPath),
   verifyPath: (filePath) => ipcRenderer.invoke('verify-path', filePath),
   scanFolder: (folderPath) => ipcRenderer.invoke('scan-folder', folderPath),
+  // New functions for file operations:
+  writeFile: (filePath, content) => ipcRenderer.invoke('write-file', filePath, content),
+  readFile: (filePath) => ipcRenderer.invoke('read-file', filePath),
   
-
   testAPI: () => 'API is working'
 });
 
